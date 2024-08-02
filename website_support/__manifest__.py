@@ -1,6 +1,6 @@
 {
     'name': "Website Help Desk / Support Ticket",
-    'version': "2.0.2",
+    'version': "2.0.3",
     'author': "Sythil Tech",
     'category': "Tools",
     'summary': "A helpdesk / support ticket system for your website",
@@ -9,6 +9,7 @@
     'data': [
         'data/ir.module.category.csv',
         'data/res.groups.xml',
+        'data/website_support_sequence.xml',
         'views/website_support_ticket_templates.xml',
         'views/website_support_ticket_compose_views.xml',
         'views/website_support_ticket_close_views.xml',
@@ -35,6 +36,7 @@
         'wizards/of_message_move_views.xml',
         'wizards/of_ticket_merge_views.xml',
         'security/ir.model.access.csv',
+        'hooks/post_hooks.xml',
     ],
     'demo': [],
     'depends': ['mail','web', 'website'],

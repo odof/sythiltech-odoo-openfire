@@ -218,12 +218,10 @@ class WebsiteSupportTicket(models.Model):
 
     @api.model
     def create(self, vals):
+        # Get next ticket number from the sequence
+        vals['ticket_number'] = self.env['ir.sequence'].next_by_code('website.support.ticket')
+
         new_id = super(WebsiteSupportTicket, self).create(vals)
-
-        new_id.ticket_number = new_id.company_id.next_support_ticket_number
-
-        #Add one to the next ticket number
-        new_id.company_id.next_support_ticket_number += 1
 
         #Auto create contact if one with that email does not exist
         setting_auto_create_contact = self.env['ir.values'].get_default('website.support.settings', 'auto_create_contact')
