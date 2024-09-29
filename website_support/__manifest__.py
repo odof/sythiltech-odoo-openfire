@@ -36,7 +36,6 @@
         'wizards/of_message_move_views.xml',
         'wizards/of_ticket_merge_views.xml',
         'security/ir.model.access.csv',
-        'hooks/post_hooks.xml',
     ],
     'demo': [],
     'depends': ['mail','web', 'website'],
